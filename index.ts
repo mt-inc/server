@@ -72,9 +72,9 @@ app.post('/data', (req: Request<{}, {}, Data>, res) => {
 app.get('/data/:pair', (req, res) => {
   const pair = req.params.pair;
   const result: { pair: Pairs; data: Data[] }[] = [];
-  if (fs.existsSync(`${__dirname}/../db`)) {
-    if (fs.existsSync(`${__dirname}/../db/data`)) {
-      if (fs.existsSync(`${__dirname}/../db/data/simulations`)) {
+  if (fs.existsSync(`${__dirname}/db`)) {
+    if (fs.existsSync(`${__dirname}/db/data`)) {
+      if (fs.existsSync(`${__dirname}/db/data/simulations`)) {
         const db = new DB<Data[]>(`data/simulations/${pair}.json`);
         const data = db.read();
         const lRes: any[] = [];

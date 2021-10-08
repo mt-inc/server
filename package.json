@@ -1,6 +1,6 @@
 {
   "name": "@mt-inc/server",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Server for MT Inc. Project",
   "author": "Maksym Shamko",
   "license": "MIT",
@@ -9,7 +9,8 @@
     "push": "git push origin master",
     "pull": "git pull origin master",
     "commit": "git add . && git commit -m 'working'",
-    "server": "ts-node --files --project tsconfig.json ./server/",
+    "server": "ts-node --files --project tsconfig.json ./",
+    "pm:server": "pm2 start server.config.js",
     "pm:server:restart": "pm2 restart server.config.js",
     "pm:server:stop": "pm2 stop server.config.js",
     "pm:server:delete": "pm2 delete server.config.js"
